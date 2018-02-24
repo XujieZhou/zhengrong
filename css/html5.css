@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+*{ padding: 0; margin: 0;}
+body{font-family:"微软雅黑", "Microsoft YaHei", arial;color: #000000;background:#fff; padding: 0; margin: 0;}
+ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,p { padding:0; margin:0;font-weight: normal;}
+ul,li{ list-style-type:none; margin:0px; padding:0px;}
+ul{list-style:none;}
+img{border:0px;padding:0; margin:0;vertical-align: middle;}
+/*a{ text-decoration:none;}*/
+.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0} 
+.clearfloat{zoom:1}
+abbr,article,aside,audio,canvas,datalist,details,dialog,eventsource,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video{display:block;}
+.free a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+* {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+*:before,*:after {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+
+
