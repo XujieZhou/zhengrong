@@ -22,14 +22,19 @@
 					</a>
 				</div>
 			</div>
+			<div class="head_mid">
+				<img src="image/head_mid.gif"/>
+			</div>
 			<div class="banner">
-				<ul class="banner_img">
-					<li>
-						<a href="#">
-							<img src="image/banner_img1.jpg"/>
-						</a>
-					</li>
-				</ul>
+				<div class="banner_n">
+					<ul class="banner_img">
+						<li>
+							<a href="#">
+								<img src="image/banner_img1.jpg"/>
+							</a>
+						</li>
+					</ul>
+				</div>
 				<ul class="nav clearfloat">
 					<li>
 						<a href="#">医院简介</a>
@@ -82,39 +87,85 @@
 				<p>名医巨匠 实力塑美</p>
 				<p>行走在医美路上的领航者</p>
 			</div>
-			<div class="doctor">
-				<i class="j_tou">
-					<img src="image/j_tou1.png"/>
-				</i>
-				<ul class="doctor_img">
-					<li>
-						<img src="image/doctor_1.jpg"/>
-					</li>
-					<li>
-						<img src="image/doctor_2.jpg"/>
-					</li>
-					<li>
-						<img src="image/doctor_3.jpg"/>
-					</li>
-					<li>
-						<img src="image/doctor_4.jpg"/>
-					</li>
-				</ul>
-				<div class="buttom">
-					<ul>
-						<li></li>
+			<div class="doctor_mid">
+				<div class="doctor">
+					<ul class="doctor_img">
 						<li>
-							<img src="image/zjia_2.png"/>
+							<img src="image/doctor_1.jpg"/>
 						</li>
 						<li>
-							<img src="image/zjia_3.png"/>
+							<img src="image/doctor_2.jpg"/>
 						</li>
 						<li>
-							<img src="image/zjia_4.png"/>
+							<img src="image/doctor_3.jpg"/>
+						</li>
+						<li>
+							<img src="image/doctor_4.jpg"/>
 						</li>
 					</ul>
+					<div class="buttom">
+						<ul>
+							<li class="on">
+								<img src="image/zjia_1.png"/>
+							</li>
+							<li>
+								<img src="image/zjia_2.png"/>
+							</li>
+							<li>
+								<img src="image/zjia_3.png"/>
+							</li>
+							<li>
+								<img src="image/zjia_4.png"/>
+							</li>
+						</ul>
+					</div>
 				</div>
-				
+				<div class="g_hao">
+					<p class="g_tit">自助免费在线挂号</p>
+					<div class="date">
+				        <div class="name">
+				           姓 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：
+				            <input type="text" value="请输入您的姓名" style="color:#b6b1ba;font-size: 1rem" onfocus="if(value=='请输入您的姓名'){this.style.color='#b6b1ba';value=''}" onblur="if(value==''){this.style.color='#b6b1ba';value='请输入您的姓名'}">
+				        </div>
+				        <div class="name phone">
+				           联系电话：<input type="text" value="请输入您的电话" style="color:#b6b1ba;font-size: 1rem" onfocus="if(value=='请输入您的电话'){this.style.color='#b6b1ba';value=''}" onblur="if(value==''){this.style.color='#b6b1ba';value='请输入您的电话'}">
+				        </div>
+				        <div class="name r_qi">
+				        	就诊时间：<input type="date" style="box-sizing: border-box;border: 1px solid #26093d;">
+				        </div>
+				        <div class="name zz">
+				           预约科室：
+				            <select name="" style="color:#26093d;font-size: 1rem">
+				                <option value="整形外科">整形外科</option>
+				                <option value="双眼皮">双眼皮</option>
+				                <option value="开眼角">开眼角</option>
+				                <option value="祛眼袋">祛眼袋</option>
+				                <option value="提眉术">提眉术</option>
+				                <option value="隆鼻">隆鼻</option>
+				                <option value="唇部整形">唇部整形</option>
+				                <option value="脸部整形">脸部整形</option>
+				                <option value="丰胸">丰胸</option>
+				                <option value="吸脂整形">吸脂整形</option>
+				                <option value="面部注射">面部注射</option>
+				                <option value="脂肪填充">脂肪填充</option>
+				                <option value="祛痣">祛痣</option>
+				                <option value="脱毛">脱毛</option>
+				            </select>
+				        </div>
+				        <ul class="ul0 clearfloat">
+				        	<li>
+				        		<a href="#">
+				        			<img src="image/g_1.png"/>
+				        		</a>
+				        	</li>
+				        	<li>
+				        		<a href="#">
+				        			<img src="image/g_2.png"/>
+				        		</a>
+				        	</li>
+				        </ul>
+					</div>
+				</div>
 			</div>
 			<div class="y_yue clearfloat">
 				<div class="yue_ico">
@@ -319,6 +370,45 @@
                
             },4000)
         })
+        
+        
+        //banner图
+        var arr = ["image/banner_img1.jpg", "image/banner_img2.jpg", "image/banner_img3.jpg", "image/banner_img4.jpg"];
+	    /****初始化页面启动显示的图片*****/
+	    $(".banner_img li a img").attr("src", arr[0]);
+	
+	    var index = 0;
+	    var timer1 = null;
+		
+	    auto();
+	    /*****自动播放图片的定时器****/
+	    function auto() {
+	        timer1 = setInterval(function() {
+	            index++;
+	            if (index > 3) {
+	                index = 0;
+	            }
+	            $(".banner_img li a img").attr("src", arr[index]).css('opacity', 0).animate({
+	                'opacity': 1
+	            }, 1000);
+	        }, 3000);
+	    }
+        
+        $('.banner_img').hover(function(){
+            clearInterval(timer1);
+        },function(){
+            timer1 = setInterval(function() {
+	            index++;
+	            if (index > 3) {
+	                index = 0;
+	            }
+	            $(".banner_img li a img").attr("src", arr[index]).css('opacity', 0).animate({
+	                'opacity': 1
+	            }, 1000);
+	        }, 3000);
+        })
+        
+        
 		
 	});
 </script>
